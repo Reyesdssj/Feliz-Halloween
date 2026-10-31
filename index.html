@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Para mi Alexa | Feliz Halloween</title>
+
+  <!-- Google Fonts: Poppins y Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Contenedor de Partículas / Luciérnagas Mágicas -->
+  <div id="particles-container" class="particles-container" aria-hidden="true"></div>
+
+  <!-- Contenedor para la explosión de corazones -->
+  <div id="hearts-container" class="hearts-container" aria-hidden="true"></div>
+
+  <!-- Contenedor Principal de la Experiencia -->
+  <div class="app-wrapper">
+
+    <!-- ==============================================
+         PANTALLA 1: EL INICIO (¿DULCE O BESO?)
+    =============================================== -->
+    <section id="screen-1" class="screen visible">
+      <div class="glass-card screen-content">
+        
+        <!-- Calabaza Kawaii Animada (SVG) -->
+        <div id="kawaii-pumpkin" class="pumpkin-wrapper float-anim">
+          <svg viewBox="0 0 160 150" class="pumpkin-svg" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="pumpkinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ff9233" />
+                <stop offset="60%" stop-color="#ff6b00" />
+                <stop offset="100%" stop-color="#d44b00" />
+              </linearGradient>
+              <linearGradient id="stemGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#70a040" />
+                <stop offset="100%" stop-color="#3b6818" />
+              </linearGradient>
+            </defs>
+            <!-- Tallo -->
+            <path d="M 80,38 C 76,22 84,12 94,10 C 92,18 88,28 85,38 Z" fill="url(#stemGrad)" />
+            <!-- Hoja tierna -->
+            <path d="M 84,24 C 95,20 102,26 98,32 C 92,34 87,30 84,24 Z" fill="#88c057" />
+            
+            <!-- Cuerpo de Calabaza (Segmentos redondeados) -->
+            <!-- Segmentos exteriores -->
+            <ellipse cx="48" cy="85" rx="36" ry="46" fill="url(#pumpkinGrad)" />
+            <ellipse cx="112" cy="85" rx="36" ry="46" fill="url(#pumpkinGrad)" />
+            <!-- Segmentos interiores -->
+            <ellipse cx="62" cy="85" rx="32" ry="49" fill="url(#pumpkinGrad)" />
+            <ellipse cx="98" cy="85" rx="32" ry="49" fill="url(#pumpkinGrad)" />
+            <!-- Segmento central -->
+            <ellipse cx="80" cy="86" rx="28" ry="50" fill="url(#pumpkinGrad)" />
+
+            <!-- Mejillas Sonrojadas (Kawaii Blush) -->
+            <ellipse cx="44" cy="94" rx="9" ry="5" fill="#ff4d88" opacity="0.55" />
+            <ellipse cx="116" cy="94" rx="9" ry="5" fill="#ff4d88" opacity="0.55" />
+
+            <!-- Ojos Kawaii Grandes con Brillos -->
+            <!-- Ojo Izquierdo -->
+            <ellipse cx="58" cy="80" rx="9" ry="12" fill="#1b120c" />
+            <circle cx="55" cy="76" r="4" fill="#ffffff" />
+            <circle cx="61" cy="84" r="2" fill="#ffffff" />
+            <!-- Ojo Derecho -->
+            <ellipse cx="102" cy="80" rx="9" ry="12" fill="#1b120c" />
+            <circle cx="99" cy="76" r="4" fill="#ffffff" />
+            <circle cx="105" cy="84" r="2" fill="#ffffff" />
+
+            <!-- Sonrisa Tierna -->
+            <path d="M 72,94 Q 80,105 88,94" stroke="#1b120c" stroke-width="3.5" stroke-linecap="round" fill="none" />
+          </svg>
+        </div>
+
+        <h1 class="glow-title">¿Dulce o Beso?</h1>
+
+        <div class="buttons-row">
+          <button id="btn-dulce" type="button" class="btn-bubble btn-candy">Dulce</button>
+          <button id="btn-beso" type="button" class="btn-bubble btn-kiss">Beso</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         PANTALLA 2: CHICO BESTIA Y RAVEN
+    =============================================== -->
+    <section id="screen-2" class="screen hidden">
+      <div class="glass-card screen-content">
+        
+        <div class="photo-frame">
+          <img src="Edit_chico_bestia_raven.jpeg" alt="Chico Bestia y Raven" class="glass-image">
+        </div>
+
+        <p class="romantic-quote">
+          “Aquí y en todos los mundos siempre serás el amor de mi vida.”
+        </p>
+
+        <!-- Botón Calabaza que late como corazón -->
+        <button id="btn-to-screen-3" class="btn-pumpkin-pulse" type="button" aria-label="Avanzar">
+          <svg viewBox="0 0 100 90" class="pulse-pumpkin-svg" xmlns="http://www.w3.org/2000/svg">
+            <!-- Tallo -->
+            <path d="M 50,22 C 48,12 54,6 60,5 C 58,11 55,17 53,22 Z" fill="#6ba33b" />
+            <!-- Cuerpo -->
+            <ellipse cx="30" cy="52" rx="22" ry="28" fill="#ff7a00" />
+            <ellipse cx="70" cy="52" rx="22" ry="28" fill="#ff7a00" />
+            <ellipse cx="40" cy="52" rx="20" ry="30" fill="#ff8c1a" />
+            <ellipse cx="60" cy="52" rx="20" ry="30" fill="#ff8c1a" />
+            <ellipse cx="50" cy="52" rx="18" ry="31" fill="#ffa033" />
+            <!-- Ojos sonrientes ^ ^ -->
+            <path d="M 37,48 Q 42,43 47,48" stroke="#1a0e05" stroke-width="2.8" stroke-linecap="round" fill="none" />
+            <path d="M 53,48 Q 58,43 63,48" stroke="#1a0e05" stroke-width="2.8" stroke-linecap="round" fill="none" />
+            <!-- Sonrisa -->
+            <path d="M 45,60 Q 50,67 55,60" stroke="#1a0e05" stroke-width="2.5" stroke-linecap="round" fill="none" />
+          </svg>
+          <span class="btn-pumpkin-hint">Tócame 🧡</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         PANTALLA 3: LOS CELOS
+    =============================================== -->
+    <section id="screen-3" class="screen hidden">
+      <div class="glass-card screen-content">
+        
+        <div class="photo-frame">
+          <img src="Celos.jpeg" alt="Momento Celos" class="glass-image">
+        </div>
+
+        <p class="romantic-quote quote-celos">
+          “Aunque hayan celos sé que lo haces desde el inmenso amor, porque cuidar lo nuestro es tu superpoder más hermoso.”
+        </p>
+
+        <!-- Botón con 3 calabacitas que saltan en bucle -->
+        <button id="btn-to-screen-4" class="btn-jumping-pumpkins" type="button" aria-label="Avanzar al final">
+          <div class="jumping-trio">
+            <!-- Calabacita 1 -->
+            <div class="jump-item jump-1">
+              <svg viewBox="0 0 50 45" class="tiny-pumpkin" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 25,12 C 24,7 27,4 30,3 Z" fill="#6ba33b" />
+                <ellipse cx="16" cy="28" rx="11" ry="14" fill="#ff7a00" />
+                <ellipse cx="34" cy="28" rx="11" ry="14" fill="#ff7a00" />
+                <ellipse cx="25" cy="28" rx="10" ry="15" fill="#ffa033" />
+                <circle cx="21" cy="26" r="1.8" fill="#1b120c" />
+                <circle cx="29" cy="26" r="1.8" fill="#1b120c" />
+                <path d="M 23,32 Q 25,35 27,32" stroke="#1b120c" stroke-width="1.6" fill="none" />
+              </svg>
+            </div>
+            <!-- Calabacita 2 -->
+            <div class="jump-item jump-2">
+              <svg viewBox="0 0 50 45" class="tiny-pumpkin" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 25,12 C 24,7 27,4 30,3 Z" fill="#6ba33b" />
+                <ellipse cx="16" cy="28" rx="11" ry="14" fill="#ff7a00" />
+                <ellipse cx="34" cy="28" rx="11" ry="14" fill="#ff7a00" />
+                <ellipse cx="25" cy="28" rx="10" ry="15" fill="#ffa033" />
+                <circle cx="21" cy="26" r="1.8" fill="#1b120c" />
+                <circle cx="29" cy="26" r="1.8" fill="#1b120c" />
+                <path d="M 23,32 Q 25,35 27,32" stroke="#1b120c" stroke-width="1.6" fill="none" />
+              </svg>
+            </div>
+            <!-- Calabacita 3 -->
+            <div class="jump-item jump-3">
+              <svg viewBox="0 0 50 45" class="tiny-pumpkin" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 25,12 C 24,7 27,4 30,3 Z" fill="#6ba33b" />
+                <ellipse cx="16" cy="28" rx="11" ry="14" fill="#ff7a00" />
+                <ellipse cx="34" cy="28" rx="11" ry="14" fill="#ff7a00" />
+                <ellipse cx="25" cy="28" rx="10" ry="15" fill="#ffa033" />
+                <circle cx="21" cy="26" r="1.8" fill="#1b120c" />
+                <circle cx="29" cy="26" r="1.8" fill="#1b120c" />
+                <path d="M 23,32 Q 25,35 27,32" stroke="#1b120c" stroke-width="1.6" fill="none" />
+              </svg>
+            </div>
+          </div>
+          <span class="trio-hint">Saltar al final ✨</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- ==============================================
+         PANTALLA 4: EL FINAL
+    =============================================== -->
+    <section id="screen-4" class="screen hidden">
+      <div class="glass-card screen-content screen-final">
+        
+        <!-- Título que cambia de color y brilla -->
+        <h1 class="halloween-shimmer-title">¡Feliz Halloween!</h1>
+
+        <!-- Collage Romántico de Fotos -->
+        <div class="collage-container">
+          <div class="collage-card card-featured">
+            <img src="Edit_Beso.jpeg" alt="Nuestro Beso Especial" class="glass-image">
+          </div>
+          <div class="collage-row">
+            <div class="collage-card card-sub">
+              <img src="Beso1.jpeg" alt="Momento Beso 1" class="glass-image">
+            </div>
+            <div class="collage-card card-sub">
+              <img src="Beso2.jpeg" alt="Momento Beso 2" class="glass-image">
+            </div>
+          </div>
+        </div>
+
+        <!-- Texto Final con Corazón Latiendo -->
+        <p class="final-love-text">
+          Gracias por compartir todos estos momentos conmigo, eres y serás mi otra mitad.
+          <span class="beating-heart" aria-label="amor">❤️</span>
+        </p>
+
+        <!-- Botón para revivir el momento -->
+        <button id="btn-restart" class="btn-restart" type="button">
+          ↻ Revivir nuestra historia
+        </button>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
